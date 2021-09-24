@@ -1,5 +1,9 @@
 ## Skimage with docker
 
+I can't run a Python script using scikit-image package and this docker iamge `gcr.io/distroless/python3-debian10`
+
+I have created an issue here: https://github.com/scikit-image/scikit-image/issues/3832#issuecomment-926630019
+
 Build:
 ```
 docker build -t skimage-distroless .
@@ -8,6 +12,11 @@ docker build -t skimage-distroless .
 Run:
 ```
 docker run -it skimage-distroless
+```
+
+Run distroless debug image using `gcr.io/distroless/python3-debian10:debug` image:
+```
+docker run --entrypoint=sh -it skimage-distroless
 ```
 
 ## Problem
